@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: normal;
+}
 .App {
   text-align: center;
 }
@@ -13,19 +19,24 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
+main {
+  background-color: #222;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
 }
-
+header{
+  position: absolute;
+  top: 0;
+}
 .App-link {
   color: #61dafb;
+  font-size: larger;
+  position: relative;
+  top: -25px;
 }
 
 @keyframes App-logo-spin {
@@ -35,4 +46,102 @@
   to {
     transform: rotate(360deg);
   }
+}
+.App-footer{
+  /* position: absolute; */
+  /* bottom: 10px; */
+}
+.App-footer img{
+  height: 65px;
+  width: 65px;
+}
+form{
+  position: relative;
+  width: fit-content;
+  margin: auto;
+}
+label{
+  display: block;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+input{
+  padding: 8px 16px;
+  outline: none;
+  border-radius: 8px;
+  border: none;
+  font-size: calc(10px + 2vmin);
+}
+
+ul{
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+}
+
+li {
+  display: block;
+}
+
+.container {
+  margin: 70px 0 20px;
+}
+
+.container .cities {
+  display: grid;
+  grid-gap: 32px 20px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.container .city {
+  position: relative;
+  padding: 40px;
+  border-radius: 20px;
+  background: #fff;
+  color: #53627c;
+}
+
+.container .city::after {
+  content: '';
+  width: 90%;
+  height: 50px;
+  position: absolute;
+  bottom: -12px;
+  left: 5%;
+  z-index: -1;
+  opacity: 0.3;
+  border-radius: 20px;
+  background: #fff;
+}
+
+.container figcaption {
+  margin-top: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.container .city-temp {
+  font-size: 5rem;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #1e2432;
+}
+
+.container .city sup {
+  font-size: 0.5em;
+}
+
+.container .city-name sup {
+  padding: 0.2em 0.6em;
+  border-radius: 30px;
+  color: #fff;
+  background: #ff8c00;
+  margin-left: 8px;
+}
+
+.container .city-icon {
+  margin-top: 10px;
+  width: 100px;
+  height: 100px;
 }
