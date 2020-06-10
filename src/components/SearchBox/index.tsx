@@ -32,7 +32,7 @@ interface Weather{
 }
 
 const SearchBox = (props: {searchResult: Result[]}) => {
-  console.log(props)
+  
   return (
     <div className="container">
       <ul className="cities">
