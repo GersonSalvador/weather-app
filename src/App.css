@@ -9,7 +9,6 @@
 }
 .App {
   text-align: center;
-  background-image: url(https://images.unsplash.com/photo-1537210249814-b9a10a161ae4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80);
   background-size: cover;
   background-position: center center;
 }
@@ -27,6 +26,7 @@ main {
   align-items: center;
   justify-content: space-between;
   color: white;
+  background-color: #222;
 }
 header{
   padding: 20px;
@@ -144,4 +144,7 @@ li {
   margin-top: 10px;
   width: 100px;
   height: 100px;
+}
+strong{
+  font-weight: bold;
 }

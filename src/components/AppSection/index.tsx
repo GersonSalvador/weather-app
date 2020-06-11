@@ -1,6 +1,7 @@
 import React, { FormEvent, useState, ChangeEvent } from 'react';
 import SearchBox from '../SearchBox';
 import axios, {AxiosError, AxiosResponse } from 'axios';
+import Swal from 'sweetalert2';
 
 interface Result extends AxiosResponse {
   data: {
@@ -56,6 +57,11 @@ export default function AppSection(){
       setResult([{main, name, sys, weather, icon}, ...result])
       setInputVal('')
     }).catch(function (error: AxiosError<Error>) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        html: `<span><p>We cound't find your city with the error:</p> <strong>${error}</strong></span>`,
+      })
       console.log(error);
     })
   }
@@ -63,8 +69,7 @@ export default function AppSection(){
   return(
     <section>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="city">City</label>
-        <input type="text" name="city" id="city" onChange={handleChange} value={inputVal} autoComplete="off"/>
+        <input type="text" name="city" id="city" onChange={handleChange} value={inputVal} placeholder="Enter the city name" autoComplete="off"/>
       </form>
       {result.length ? <SearchBox searchResult={result}/> : ''}
     </section>
