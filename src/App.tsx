@@ -4,10 +4,9 @@ import AppSection from './components/AppSection';
 import AppFooter from './components/AppFooter';
 import './App.css';
 
-
 function App() {
 
-  function importAll(r) {
+  function importAll(r: any) {
     return r.keys().map(r);
   }
 
